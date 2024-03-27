@@ -1,0 +1,15 @@
+---
+import Social from "./Social.astro";
+const platform = "github";
+const username = "esaraviam";
+---
+
+<footer>
+    <p>¡Más información sobre mis proyectos en <a href={`https://www.${platform}.com/${username}`} target="_blank">{platform}</a>!</p>
+    {username}
+    <Social platform="twitter" {username}/>
+    <Social platform="facebook" username={username}/>
+    <Social platform="instagram" username=`${username}`/>
+
+    <!-- Tres formas de pasar props -->
+</footer>

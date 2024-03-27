@@ -1,0 +1,31 @@
+---
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import BaseLayout from "./BaseLayout.astro";
+const {frontmatter} = Astro.props;
+---
+<BaseLayout pageTitle={frontmatter.title}>
+    <ul>
+        {frontmatter.tags.map(tag =>
+                <li>{tag}</li>)}
+    </ul>
+    <p>{frontmatter.pubDate.toString().slice(0, 10)}</p>
+    <p><em>{frontmatter.description}</em></p>
+    <p>Escrito por: {frontmatter.author}</p>
+    <slot/>
+</BaseLayout>
+<style>
+    ul{
+        display: flex;
+    }
+    li{
+        border: 1px solid aquamarine;
+        border-radius: 5px;
+        margin: 3px;
+        list-style: none;
+        padding: 3px;
+        background: #ff9776;
+        color: black;
+
+    }
+</style>
