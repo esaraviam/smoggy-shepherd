@@ -6,7 +6,7 @@ const {frontmatter} = Astro.props;
 ---
 <BaseLayout pageTitle={frontmatter.title}>
     <ul>
-        {frontmatter.tags.map(tag =>
+        {frontmatter.tags.map((tag:string) =>
                 <li>{tag}</li>)}
     </ul>
     <p>{frontmatter.pubDate.toString().slice(0, 10)}</p>
